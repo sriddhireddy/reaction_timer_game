@@ -315,6 +315,63 @@ Discarded input sections
  .debug_frame   0x00000000       0x34 ./Src/sysmem.o
  .ARM.attributes
                 0x00000000       0x34 ./Src/sysmem.o
+ .group         0x00000000        0xc ./Src/systick_driver.o
+ .group         0x00000000        0xc ./Src/systick_driver.o
+ .group         0x00000000        0xc ./Src/systick_driver.o
+ .group         0x00000000        0xc ./Src/systick_driver.o
+ .group         0x00000000        0xc ./Src/systick_driver.o
+ .group         0x00000000        0xc ./Src/systick_driver.o
+ .group         0x00000000        0xc ./Src/systick_driver.o
+ .group         0x00000000        0xc ./Src/systick_driver.o
+ .group         0x00000000        0xc ./Src/systick_driver.o
+ .group         0x00000000        0xc ./Src/systick_driver.o
+ .group         0x00000000        0xc ./Src/systick_driver.o
+ .group         0x00000000        0xc ./Src/systick_driver.o
+ .group         0x00000000        0xc ./Src/systick_driver.o
+ .group         0x00000000        0xc ./Src/systick_driver.o
+ .group         0x00000000        0xc ./Src/systick_driver.o
+ .group         0x00000000        0xc ./Src/systick_driver.o
+ .text          0x00000000        0x0 ./Src/systick_driver.o
+ .data          0x00000000        0x0 ./Src/systick_driver.o
+ .bss           0x00000000        0x0 ./Src/systick_driver.o
+ .text.SysTick_Init
+                0x00000000       0x28 ./Src/systick_driver.o
+ .text.SysTick_DelayMs
+                0x00000000       0x44 ./Src/systick_driver.o
+ .bss.counter   0x00000000        0x4 ./Src/systick_driver.o
+ .text.SysTick_Update
+                0x00000000       0x2c ./Src/systick_driver.o
+ .text.SysTick_Millis
+                0x00000000       0x18 ./Src/systick_driver.o
+ .debug_info    0x00000000      0x161 ./Src/systick_driver.o
+ .debug_abbrev  0x00000000      0x118 ./Src/systick_driver.o
+ .debug_aranges
+                0x00000000       0x38 ./Src/systick_driver.o
+ .debug_rnglists
+                0x00000000       0x25 ./Src/systick_driver.o
+ .debug_macro   0x00000000       0xf0 ./Src/systick_driver.o
+ .debug_macro   0x00000000      0xaf0 ./Src/systick_driver.o
+ .debug_macro   0x00000000       0x28 ./Src/systick_driver.o
+ .debug_macro   0x00000000       0x28 ./Src/systick_driver.o
+ .debug_macro   0x00000000       0x22 ./Src/systick_driver.o
+ .debug_macro   0x00000000       0x8e ./Src/systick_driver.o
+ .debug_macro   0x00000000       0x51 ./Src/systick_driver.o
+ .debug_macro   0x00000000      0x103 ./Src/systick_driver.o
+ .debug_macro   0x00000000       0x6a ./Src/systick_driver.o
+ .debug_macro   0x00000000      0x1df ./Src/systick_driver.o
+ .debug_macro   0x00000000       0x1c ./Src/systick_driver.o
+ .debug_macro   0x00000000       0x22 ./Src/systick_driver.o
+ .debug_macro   0x00000000       0xfb ./Src/systick_driver.o
+ .debug_macro   0x00000000     0x1011 ./Src/systick_driver.o
+ .debug_macro   0x00000000      0x11f ./Src/systick_driver.o
+ .debug_macro   0x00000000    0x16749 ./Src/systick_driver.o
+ .debug_macro   0x00000000       0x6d ./Src/systick_driver.o
+ .debug_line    0x00000000      0x5da ./Src/systick_driver.o
+ .debug_str     0x00000000    0x8b1c6 ./Src/systick_driver.o
+ .comment       0x00000000       0x44 ./Src/systick_driver.o
+ .debug_frame   0x00000000       0x98 ./Src/systick_driver.o
+ .ARM.attributes
+                0x00000000       0x34 ./Src/systick_driver.o
  .group         0x00000000        0xc ./Src/uart_driver.o
  .group         0x00000000        0xc ./Src/uart_driver.o
  .group         0x00000000        0xc ./Src/uart_driver.o
@@ -597,6 +654,7 @@ LOAD ./Src/gpio_driver.o
 LOAD ./Src/main.o
 LOAD ./Src/syscalls.o
 LOAD ./Src/sysmem.o
+LOAD ./Src/systick_driver.o
 LOAD ./Src/uart_driver.o
 LOAD ./Startup/startup_stm32f446retx.o
 START GROUP
