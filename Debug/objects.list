@@ -1,5 +1,6 @@
 "./Src/gpio_driver.o"
 "./Src/main.o"
+"./Src/random.o"
 "./Src/syscalls.o"
 "./Src/sysmem.o"
 "./Src/systick_driver.o"

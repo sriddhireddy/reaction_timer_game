@@ -7,6 +7,7 @@
 C_SRCS += \
 ../Src/gpio_driver.c \
 ../Src/main.c \
+../Src/random.c \
 ../Src/syscalls.c \
 ../Src/sysmem.c \
 ../Src/systick_driver.c \
@@ -15,6 +16,7 @@ C_SRCS += \
 OBJS += \
 ./Src/gpio_driver.o \
 ./Src/main.o \
+./Src/random.o \
 ./Src/syscalls.o \
 ./Src/sysmem.o \
 ./Src/systick_driver.o \
@@ -23,6 +25,7 @@ OBJS += \
 C_DEPS += \
 ./Src/gpio_driver.d \
 ./Src/main.d \
+./Src/random.d \
 ./Src/syscalls.d \
 ./Src/sysmem.d \
 ./Src/systick_driver.d \
@@ -36,7 +39,7 @@ Src/%.o Src/%.su Src/%.cyclo: ../Src/%.c Src/subdir.mk
 clean: clean-Src
 
 clean-Src:
-	-$(RM) ./Src/gpio_driver.cyclo ./Src/gpio_driver.d ./Src/gpio_driver.o ./Src/gpio_driver.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su ./Src/systick_driver.cyclo ./Src/systick_driver.d ./Src/systick_driver.o ./Src/systick_driver.su ./Src/uart_driver.cyclo ./Src/uart_driver.d ./Src/uart_driver.o ./Src/uart_driver.su
+	-$(RM) ./Src/gpio_driver.cyclo ./Src/gpio_driver.d ./Src/gpio_driver.o ./Src/gpio_driver.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/random.cyclo ./Src/random.d ./Src/random.o ./Src/random.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su ./Src/systick_driver.cyclo ./Src/systick_driver.d ./Src/systick_driver.o ./Src/systick_driver.su ./Src/uart_driver.cyclo ./Src/uart_driver.d ./Src/uart_driver.o ./Src/uart_driver.su
 
 .PHONY: clean-Src
 

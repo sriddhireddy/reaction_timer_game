@@ -1,10 +1,14 @@
 #include "gpio_driver.h"
 #include "uart_driver.h"
+#include "systick_driver.h"
+#include "random.h"
 
 int main(void)
 {
 	GPIO_Init();
 	UART_Init();
+	SysTick_Init();
+	Random_Init(1234);
 
     while(1)
     {
@@ -16,7 +20,12 @@ int main(void)
 //    	GPIO_LED_Toggle();
 //    	for(volatile int i=0;i<1000000;i++){}
 
-    	UART_WriteString("Hello\r\n");
+//    	UART_WriteString("Hello\r\n");
+
+    	uint32_t value = Random_Generate();
+    	UART_WriteUInt(value);
+    	UART_WriteString("\r\n");
+        SysTick_DelayMs(1000);
 
     }
 }

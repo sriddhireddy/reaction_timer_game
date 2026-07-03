@@ -1,0 +1,2 @@
+../Src/random.c:5:6:Random_Init	1
+../Src/random.c:9:10:Random_Generate	1
