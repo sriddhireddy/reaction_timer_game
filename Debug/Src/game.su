@@ -1,0 +1,2 @@
+../Src/game.c:22:6:Game_Init	8	static
+../Src/game.c:29:6:Game_Update	8	static
