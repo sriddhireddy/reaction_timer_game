@@ -6,7 +6,7 @@
 
 void SysTick_Init(void);
 void SysTick_DelayMs(uint32_t ms);
-void SysTick_Update(void);
+void SysTick_Handler(void);
 uint32_t SysTick_Millis(void);
 
 #endif /* SYSTICK_DRIVER_H_ */
