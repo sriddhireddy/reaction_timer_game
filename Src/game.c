@@ -17,10 +17,13 @@ static uint32_t randomDelay;
 static uint32_t startTime;
 static uint32_t endTime;
 static uint32_t reactionTime;
+static uint32_t readyStartTime;
+static uint8_t readyStarted = 0;
 static uint8_t resultPrinted = 0;
 
 void Game_Init(void){
 	currentState = WAIT;
+	readyStarted = 0;
 	GPIO_LED_Off();
 	UART_WriteString("REACTION GAME TIMER\r\n");
 	UART_WriteString("Press the button to start!\r\n");
@@ -38,13 +41,33 @@ void Game_Update(void){
 	    	}
 	        break;
 
+//	    case READY:
+//	    	SysTick_DelayMs(randomDelay);
+//	    	GPIO_LED_On();
+//	    	startTime = SysTick_Millis();
+//	    	UART_WriteString("GO!\r\n");
+//	    	currentState = GO;
+//	        break;
+
 	    case READY:
-	    	SysTick_DelayMs(randomDelay);
-	    	GPIO_LED_On();
-	    	startTime = SysTick_Millis();
-	    	UART_WriteString("GO!\r\n");
-	    	currentState = GO;
-	        break;
+	    	if(!readyStarted){
+	    		readyStartTime = SysTick_Millis();
+	    		readyStarted = 1;
+	    	}
+	    	if(GPIO_ButtonPressed()){
+	    		UART_WriteString("Too Early!\r\n");
+	    		readyStarted = 0;
+	    		currentState = WAIT;
+	    		break;
+	    	}
+	    	if((SysTick_Millis()-readyStartTime) >= randomDelay){
+	    		GPIO_LED_On();
+	    		startTime = SysTick_Millis();
+	    		UART_WriteString("GO!\r\n");
+	    		readyStarted = 0;
+	    		currentState = GO;
+	    	}
+	    	break;
 
 	    case GO:
 //	    	GPIO_LED_On();
@@ -68,26 +91,13 @@ void Game_Update(void){
 	    	if(GPIO_ButtonPressed()){
 //	    		UART_WriteString("Button detected in RESULT\r\n");
 	    		resultPrinted = 0;
+	    		reactionTime = 0;
+	    		startTime = 0;
+	    		endTime = 0;
+	    		readyStartTime = 0;
 	    		currentState = WAIT;
 	    	}
 	        break;
-//	    case RESULT:
-//
-//	        if(!resultPrinted)
-//	        {
-//	            UART_WriteString("Reaction: ");
-//	            UART_WriteUInt(reactionTime);
-//	            UART_WriteString("\r\n");
-//
-//	            resultPrinted = 1;
-//	        }
-//
-//	        UART_WriteUInt(GPIO_ReadButton());
-//	        UART_WriteString("\r\n");
-//
-//	        SysTick_DelayMs(100);
-//
-//	        break;
 
 	    default:
 	        break;
