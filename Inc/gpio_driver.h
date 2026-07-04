@@ -8,5 +8,6 @@ void GPIO_LED_On(void);
 void GPIO_LED_Off(void);
 void GPIO_LED_Toggle(void);
 uint8_t GPIO_ReadButton(void);
+uint8_t GPIO_ButtonPressed(void);
 
 #endif /* GPIO_DRIVER_H_ */
